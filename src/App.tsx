@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ListGroup from './components/ListGroup';
+import ListGroup from './components/ListGroup/ListGroup';
 
 function App() {
   let items = ['New York', 'San Francisco', 'Tokyo', 'London', 'Paris'];
