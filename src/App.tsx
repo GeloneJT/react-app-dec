@@ -1,18 +1,14 @@
 import { useState } from 'react';
-import ListGroup from './components/ListGroup';
-import './App.css'
+import NavBar from './components/NavBar';
+import Cart from './components/Cart';
 
 function App() {
-  let items = ['New York', 'San Francisco', 'Tokyo', 'London', 'Paris'];
+  const [cartItems, setCartItems] = useState(['Product1', 'Product2']);
+
   return (
     <div>
-      <ListGroup
-        items={items}
-        heading={'Cities'}
-        onSelectItem={function (item: string): void {
-          console.log(item);
-        }}
-      ></ListGroup>
+      <NavBar cartItemCount={cartItems.length}></NavBar>
+      <Cart cartItems={cartItems} onClear={() => setCartItems([])}></Cart>
     </div>
   );
 }
