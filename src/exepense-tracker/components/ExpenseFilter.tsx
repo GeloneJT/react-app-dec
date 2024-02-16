@@ -1,4 +1,5 @@
 import React from 'react';
+import { categories } from '../../App';
 
 interface TrackerProps {
   onSelectCategory: (catergory: string) => void;
@@ -11,9 +12,7 @@ const ExpenseFilter = ({ onSelectCategory }: TrackerProps) => {
       onChange={(event) => onSelectCategory(event.target.value)}
     >
       <option value="">All categories</option>
-      <option value="Groceries">Groceries</option>
-      <option value="Utilities">Utlitlies</option>
-      <option value="Entertainment">Entertainment</option>
+      {categories.map(category => <option key={category} value={category}>{category}</option>)}
     </select>
   );
 };
