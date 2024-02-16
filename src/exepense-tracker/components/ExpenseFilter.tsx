@@ -1,5 +1,5 @@
 import React from 'react';
-import { categories } from '../../App';
+import categories from '../categories';
 
 interface TrackerProps {
   onSelectCategory: (catergory: string) => void;
