@@ -6,7 +6,7 @@ import categories from './exepense-tracker/categories';
 
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState(' ');
+  const [selectedCategory, setSelectedCategory] = useState('');
   const [expenses, setExpenses] = useState([
     { id: 1, description: 'aaa', amount: 10, category: 'Utilities' },
     { id: 2, description: 'bbb', amount: 10, category: 'Utilities' },
@@ -24,7 +24,8 @@ function App() {
   return (
     <div>
       <div className="mb-5">
-        <ExpenseForm />
+        <ExpenseForm onSubmit={(expense) => setExpenses([...expenses,  {...expense, id: expenses.length + 1}])
+        } />
       </div>
       <div className="mb-3">
         <ExpenseFilter
